@@ -1,0 +1,63 @@
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+header {
+    background-color: midnightblue;
+    color: lightgray;
+    height: 100px;
+}
+
+header h1 {
+    font-size: 36px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+
+}
+
+.form {
+    border-style: solid;
+    
+}
+
+.pure-g {
+    letter-spacing: 0em;
+}
+
+.pure-menu {
+    display: inline;
+}
+
+.submitBtn {
+    float: right;
+    size: 50px;
+    border-radius: 25px;
+}
+.cards {
+    position: absolute;
+    display: inline;
+}
+
+#weather-card {
+    border-style: dashed;
+}
+
+#spotify-card {
+    border-style: dashed;
+}
+
+@media only screen and (max-width: 720px) {
+    header h1 {
+      font-size: 30px;
+    }
+  }

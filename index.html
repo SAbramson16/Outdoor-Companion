@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">   
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header><h1>My Outdoor Journey Companion</h1></header>
+
+    <main>
+        <p>Let me be your companion on your journey today! Search for your location, select a length of time your journey will take, and what kind of music you would like to listen to. Click submit and you will see the weather forecast and a spotify playlist chosen just for you and your journey. Enjoy!</p>
+        <div class="pure-u-md-1-2">
+            <section class="form">
+                <form class ='pure-form' id="search-form"><h3>Enter your city</h3></form>
+                <fieldset>
+                    <input id="search-input" type="text" class="pure-input-rounded" placeholder="Enter city name">
+                    <button id="searchBtn" class ='btn pure-button'>Search</button>
+                </fieldset>
+            </section>
+
+            <div class="pure-menu pure-menu-horizontal">
+                  <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                   <a href="#" id="menuLink1" class="pure-menu-link">Choose your mood</a>
+                <ul class="pure-menu-children">
+                    <a href="#" class="pure-menu-link">Mood1</a></li>
+                  <li class="pure-menu-item">
+                   <a href="#" class="pure-menu-link">Mood2</a></li>
+                  <li class="pure-menu-item">
+                   <a href="#" class="pure-menu-link">Mood3</a></li>
+                  <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Mood4</a></li>
+                  <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Mood5</a></li>
+                  <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Mood6</a></li>
+            </div>
+
+            <div class="pure-menu pure-menu-horizontal">
+                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                 <a href="#" id="menuLink1" class="pure-menu-link">How long is your journey?</a>
+              <ul class="pure-menu-children">
+                  <a href="#" class="pure-menu-link">10 minutes</a></li>
+                <li class="pure-menu-item">
+                 <a href="#" class="pure-menu-link">20 minutes</a></li>
+                <li class="pure-menu-item">
+                 <a href="#" class="pure-menu-link">30 minutes</a></li>
+                <li class="pure-menu-item">
+                  <a href="#" class="pure-menu-link">45 minutes</a></li>
+                <li class="pure-menu-item">
+                  <a href="#" class="pure-menu-link">1 hour</a></li>
+                <li class="pure-menu-item">
+                  <a href="#" class="pure-menu-link">2 hours</a></li>
+        </div>
+
+        <section class="pure-g submitBtn">
+            <button id="submitBtn" class ='btn pure-button'>Start my Journey!</button>
+        </section>
+
+    </main>
+
+<script src='./assets/js/script.js'></script>
+</body>
+</html>
