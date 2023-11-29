@@ -4,65 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journey Companion</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">   
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body class ="body" id="first-body">
     <header><h1>My Outdoor Journey Companion</h1></header>
 
     <main>
-        <p>Let me be your companion on your journey today! Search for your location, select a length of time your journey will take, and what kind of music you would like to listen to. Click submit and you will see the weather forecast and a spotify playlist chosen just for you and your journey. Enjoy!</p>
-        <div class="pure-u-md-1-2">
-            <section class="form">
-                <form class ='pure-form' id="search-form"><h3>Enter your city</h3></form>
-                <fieldset>
-                    <input id="search-input" type="text" class="pure-input-rounded" placeholder="Enter city name">
-                    <button id="searchBtn" class ='btn pure-button'>Search</button>
-                </fieldset>
-            </section>
+        <section id="introSection">
+            <p>Let me be your companion on your journey today! Search for your location, select a length of time your journey will take, and what kind of music you would like to listen to. Click submit and you will see the weather forecast and a spotify playlist chosen just for you and your journey. Enjoy!</p>
+            <div class="pure-u-md-1-2">
+                <section class="form">
+                    <form class ='pure-form' id="search-form"><h3>Enter your city</h3></form>
+                    <fieldset>
+                        <input id="search-input" type="text" class="pure-input-rounded" placeholder="Enter city name">
+                        <button id="searchBtn" class ='btn pure-button'>Search</button>
+                    </fieldset>
+                    <div class="selectCity">
+                        <form action="" method="post">
+                            <select name="id" id="cities" onchange="javacript:chooseCity()"></select>
+                        </form>
+                    </div>
+                </section>
 
-            <div class="pure-menu pure-menu-horizontal">
-                  <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                   <a href="#" id="menuLink1" class="pure-menu-link">Choose your mood</a>
+                <div class="select-mood pure-menu pure-menu-horizontal">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <a href="#" id="menuLink1" class="pure-menu-link">Choose your mood</a>
+                    <ul class="pure-menu-children">
+                        <a href="#" class="pure-menu-link">Mood1</a></li>
+                    <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Mood2</a></li>
+                    <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Mood3</a></li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">Mood4</a></li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">Mood5</a></li>
+                    <li class="pure-menu-item">
+                        <a href="#" class="pure-menu-link">Mood6</a></li>
+                </div>
+
+                <div class="pure-menu pure-menu-horizontal">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <a href="#" id="menuLink1" class="pure-menu-link">How long is your journey?</a>
                 <ul class="pure-menu-children">
-                    <a href="#" class="pure-menu-link">Mood1</a></li>
-                  <li class="pure-menu-item">
-                   <a href="#" class="pure-menu-link">Mood2</a></li>
-                  <li class="pure-menu-item">
-                   <a href="#" class="pure-menu-link">Mood3</a></li>
-                  <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Mood4</a></li>
-                  <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Mood5</a></li>
-                  <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Mood6</a></li>
+                    <a href="#" class="pure-menu-link">10 minutes</a></li>
+                    <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">20 minutes</a></li>
+                    <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">30 minutes</a></li>
+                    <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">45 minutes</a></li>
+                    <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">1 hour</a></li>
+                    <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">2 hours</a></li>
             </div>
 
-            <div class="pure-menu pure-menu-horizontal">
-                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                 <a href="#" id="menuLink1" class="pure-menu-link">How long is your journey?</a>
-              <ul class="pure-menu-children">
-                  <a href="#" class="pure-menu-link">10 minutes</a></li>
-                <li class="pure-menu-item">
-                 <a href="#" class="pure-menu-link">20 minutes</a></li>
-                <li class="pure-menu-item">
-                 <a href="#" class="pure-menu-link">30 minutes</a></li>
-                <li class="pure-menu-item">
-                  <a href="#" class="pure-menu-link">45 minutes</a></li>
-                <li class="pure-menu-item">
-                  <a href="#" class="pure-menu-link">1 hour</a></li>
-                <li class="pure-menu-item">
-                  <a href="#" class="pure-menu-link">2 hours</a></li>
-        </div>
-
-        <section class="pure-g submitBtn">
-            <button id="submitBtn" class ='btn pure-button'>Start my Journey!</button>
+            <section class="pure-g submitBtn">
+                <button id="submitBtn" class ='btn pure-button'>Start my Journey!</button>
+            </section>
         </section>
 
+    <section id="displaySection">
+        <header><button id="backBtn" class ='btn pure-button'>Go back</button></header>
+        <section class="pure-g container">
+            <section class="pure-u-2 card"  id="weather-card">
+                <card id="todays-weather"></card>
+                    <h2 id="today-weather-city">Today's Weather</h2>
+                    <p id="temp"></p>
+                    <p id="feels-like"></p>
+                    <p id="description"></p>
+                    <p id="wind"></p>
+                    <p id="humidity"></p>
+    
+            </section>
+        </section>
+        <section id="hourlyCast">
+            <card id="threeHourCast"></card>
+            <h2>Hourly Forecast</h2>
+            <h5 id="hour0"></h5>
+            <p id="temp0"></p>
+            <p id="feels-like0"></p>
+            <p id="description0"></p>
+            <p id="wind0"></p>
+            <p id="humidity0"></p>
+
+        </section>
+        <section class="pure-g container">
+            <section class="pure-u-2 card"  id="quote-card">
+                <h1>Quote of the Day</h1>
+                <p id="dailyQuote"></p>
+                <p id="quoteAuthor"></p>
+            </section>
+        </section>
+        <section class="pure-g container">
+                <section class="pure-u-2 card"  id="spotify-card">
+                    <h1>Playing...</h1>
+                    <h2>Spotify Playlist</h2>
+                </section>
+        </section>
+    </section>
     </main>
+
+    <footer> <h2><span>&copy</span> Copyright 2023 -- Kunal Shah, Syed Kazmi, Sharon Abramson</h2></footer>
 
 <script src='./assets/js/script.js'></script>
 </body>
