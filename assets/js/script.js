@@ -147,7 +147,7 @@ function getTodaysWeather(lon, lat, cityName) {
         let unixTime = data.dt;
         let unixToHour = dayjs.unix(unixTime).format('h:mm a, MMM D'); // the current weather
        
-        todayWeatherCity.textContent = cityName + unixToHour
+        todayWeatherCity.textContent = cityName + ": " + unixToHour
 
         let actualTemp = document.getElementById('temp');
         actualTemp.textContent='Temp: ' + data.main.temp;
@@ -201,11 +201,10 @@ function getThreeHourCast(lon, lat) {
                 weatherDescription.textContent='Conditions: ' + daysList[i].weather.description;
                 let feelsLikeTemp = document.getElementById('feels-like0');
                 feelsLikeTemp.textContent='Feels like: ' + daysList[i].main.feels_like;
-            }
-            
-            
+                
+            };
         });
-}   
+};   console.log(getThreeHourCast);
 
 
 

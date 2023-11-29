@@ -7,8 +7,8 @@
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
             <p>Let me be your companion on your journey today! Search for your location, select a length of time your journey will take, and what kind of music you would like to listen to. Click submit and you will see the weather forecast and a spotify playlist chosen just for you and your journey. Enjoy!</p>
             <div class="pure-u-md-1-2">
                 <section class="form">
-                    <form class ='pure-form' id="search-form"><h3>Enter your city</h3></form>
+                    <form class ='pure-form pure-u-md-1-4' id="search-form"><h3>Enter your city</h3></form>
                     <fieldset>
                         <input id="search-input" type="text" class="pure-input-rounded" placeholder="Enter city name">
                         <button id="searchBtn" class ='btn pure-button'>Search</button>
@@ -40,34 +40,34 @@
                     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
                     <a href="#" id="menuLink1" class="pure-menu-link">Choose your mood</a>
                     <ul class="pure-menu-children">
-                        <a href="#" class="pure-menu-link">Mood1</a></li>
+                        <a href="#" id='Mood0' class="pure-menu-link">Mood1</a></li>
                     <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Mood2</a></li>
+                    <a href="#" id='Mood1' class="pure-menu-link">Mood2</a></li>
                     <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">Mood3</a></li>
+                    <a href="#" id='Mood2' class="pure-menu-link">Mood3</a></li>
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">Mood4</a></li>
+                        <a href="#" id='Mood3' class="pure-menu-link">Mood4</a></li>
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">Mood5</a></li>
+                        <a href="#" id='Mood4' class="pure-menu-link">Mood5</a></li>
                     <li class="pure-menu-item">
-                        <a href="#" class="pure-menu-link">Mood6</a></li>
+                        <a href="#" id='Mood5' class="pure-menu-link">Mood6</a></li>
                 </div>
 
                 <div class="pure-menu pure-menu-horizontal">
                     <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
                     <a href="#" id="menuLink1" class="pure-menu-link">How long is your journey?</a>
                 <ul class="pure-menu-children">
-                    <a href="#" class="pure-menu-link">10 minutes</a></li>
+                    <a href="#" id="time0" class="pure-menu-link">10 minutes</a></li>
                     <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">20 minutes</a></li>
+                    <a href="#" id="time1" class="pure-menu-link">20 minutes</a></li>
                     <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">30 minutes</a></li>
+                    <a href="#" id="time2" class="pure-menu-link">30 minutes</a></li>
                     <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">45 minutes</a></li>
+                    <a href="#" id="time3" class="pure-menu-link">45 minutes</a></li>
                     <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">1 hour</a></li>
+                    <a href="#" id="time4" class="pure-menu-link">1 hour</a></li>
                     <li class="pure-menu-item">
-                    <a href="#" class="pure-menu-link">2 hours</a></li>
+                    <a href="#" id="time5" class="pure-menu-link">2 hours</a></li>
             </div>
 
             <section class="pure-g submitBtn">
@@ -78,37 +78,61 @@
     <section id="displaySection">
         <header><button id="backBtn" class ='btn pure-button'>Go back</button></header>
         <section class="pure-g container">
-            <section class="pure-u-2 card"  id="weather-card">
+            <section class="pure-u-1-4 card"  id="weather-card">
                 <card id="todays-weather"></card>
-                    <h2 id="today-weather-city">Today's Weather</h2>
-                    <p id="temp"></p>
-                    <p id="feels-like"></p>
-                    <p id="description"></p>
-                    <p id="wind"></p>
-                    <p id="humidity"></p>
-    
+                    <h2 class="card-title"  id="today-weather-city">Today's Weather</h2>
+                    <p class="weather-term" id="temp"></p>
+                    <p class="weather-term" id="feels-like"></p>
+                    <p class="weather-term" id="description"></p>
+                    <p class="weather-term" id="wind"></p>
+                    <p class="weather-term" id="humidity"></p>
             </section>
         </section>
-        <section id="hourlyCast">
-            <card id="threeHourCast"></card>
-            <h2>Hourly Forecast</h2>
-            <h5 id="hour0"></h5>
-            <p id="temp0"></p>
-            <p id="feels-like0"></p>
-            <p id="description0"></p>
-            <p id="wind0"></p>
-            <p id="humidity0"></p>
 
-        </section>
+        <section class="pure-g container" id="hourlyCast">
+            <card class="pure-u-1-4 card" id="three-hour-card">
+                <h2 class="card-title" >Hourly Forecast</h2>
+                <h5 id="hour0"></h5>
+                <p class="hourly-weather-term" id="temp0"></p>
+                <p class="hourly-weather-term" id="feels-like0"></p>
+                <p class="hourly-weather-term" id="description0"></p>
+                <p class="hourly-weather-term" id="wind0"></p>
+                <p class="hourly-weather-term" id="humidity0"></p>
+            </card>
+
+        <!-- <section class="pure-g container"> -->
+            <card class="pure-u-1-4 card">
+                <h5 id="hour1"></h5>
+                <p class="hourly-weather-term" id="temp1"></p>
+                <p class="hourly-weather-term" id="feels-like1"></p>
+                <p class="hourly-weather-term" id="description1"></p>
+                <p class="hourly-weather-term" id="wind1"></p>
+                <p class="hourly-weather-term" id="humidity1"></p>
+             </card>
+        <!-- </section> -->
+
+        <!-- <section class="pure-g container"> -->
+            <card class="pure-u-1-4 card" >
+                <h5 id="hour2"></h5>
+                <p class="hourly-weather-term" id="temp2"></p>
+                <p class="hourly-weather-term" id="feels-like2"></p>
+                <p class="hourly-weather-term" id="description2"></p>
+                <p class="hourly-weather-term" id="wind2"></p>
+                <p class="hourly-weather-term" id="humidity2"></p>
+            </card>
+        <!-- </section> -->
+    </section>
         <section class="pure-g container">
-            <section class="pure-u-2 card"  id="quote-card">
+            <section class="pure-u-1-4 card"  id="quote-card">
                 <h1>Quote of the Day</h1>
                 <p id="dailyQuote"></p>
                 <p id="quoteAuthor"></p>
             </section>
         </section>
+    
+
         <section class="pure-g container">
-                <section class="pure-u-2 card"  id="spotify-card">
+                <section class="pure-u card"  id="spotify-card">
                     <h1>Playing...</h1>
                     <h2>Spotify Playlist</h2>
                 </section>
