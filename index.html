@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Journey Companion</title>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,9 +21,11 @@
     <main>
       <section class="container" id="introSection">
         <p>
-          Let me be your companion on your journey today! Search for your location and select what
-          kind of music you would like to listen to. Click submit and you will see the weather forecast, a spotify playlist chosen just for you and a random generated quote to motivate you on your journey.
-          Enjoy!
+          Let me be your companion on your journey today! Search for your
+          location, select a length of time your journey will take, and what
+          kind of music you would like to listen to. Click submit and you will
+          see the weather forecast and a spotify playlist chosen just for you
+          and your journey. Enjoy!
         </p>
         <div class="field">
           <label class="label">Enter your city</label>
@@ -59,14 +56,24 @@
         </div>
 
         <div class="select is-primary">
+          <select id="moodSelect">
+            <option value="1">Mood1</option>
+            <option value="2">Mood2</option>
+            <option value="3">Mood3</option>
+            <option value="4">Mood4</option>
+            <option value="5">Mood5</option>
+          </select>
+        </div>
+
+        <div class="select is-primary">
           <select>
-            <option>Select your genre</option>
-            <option>Happy</option>
-            <option>Sad</option>
-            <option>Intense</option>
-            <option>Light</option>
-            <option>Acoustic</option>
-            <option>Electronic</option>
+            <option>How long is your journey?</option>
+            <option>10 Minutes</option>
+            <option>20 Minutes</option>
+            <option>30 minutes</option>
+            <option>45 minutes</option>
+            <option>1 hour</option>
+            <option>2 hours</option>
           </select>
         </div>
 
@@ -77,66 +84,63 @@
         </div>
       </section>
 
-    <section id="displaySection">
+      <section id="displaySection">
         <button id="backBtn" class="button is-primary">Go back</button>
-     
-        <div class="columns">
-            <div class="column"></div>
-                <div class="column card is-half" id="weather-card">
-                <h2 class="card-title" id="today-weather-city">Today's Weather</h2>
-                <h3 id="todays-weather"></h3>
-                <p class="weather-term" id="description"></p>
-                <p class="weather-term" id="temp"></p>
-                <p class="weather-term" id="feels-like"></p>
-                <p class="weather-term" id="wind"></p>
-                <p class="weather-term" id="humidity"></p>
-                </div>
 
-                <div class="column card is-half" id="quote-card">
-                    <h1 class="card-title">Quote of the Day</h1>
-                    <p id="dailyQuote"></p>
-                    <p id="quoteAuthor"></p>
-                </div>
-            </div>
-        
-        <div class="columns">
-            <section class="column card is-one-quarter" id="hourlyCast">
-            <div class="hour-card column is-one-third">
-                <h2 class="card-title">Hourly Forecast</h2>
-                <h5 class="hour" id="hour0"></h5>
-                <p class="hourly-weather-term" id="description0"></p>
-                <p class="hourly-weather-term" id="temp0"></p>
-                <p class="hourly-weather-term" id="feels-like0"></p>
-                <p class="hourly-weather-term" id="wind0"></p>
-                <p class="hourly-weather-term" id="humidity0"></p>
-            </div>
-            <div class="hour-card column is-one-third">
-                <h5 class="hour" id="hour1"></h5>
-                <p class="hourly-weather-term" id="description1"></p>
-                <p class="hourly-weather-term" id="temp1"></p>
-                <p class="hourly-weather-term" id="feels-like1"></p>
-                <p class="hourly-weather-term" id="wind1"></p>
-                <p class="hourly-weather-term" id="humidity1"></p>
-            </div>
-            <div class="hour-card column is-one-third">
-                <h5 class="hour" id="hour2"></h5>
-                <p class="hourly-weather-term" id="description2"></p>
-                <p class="hourly-weather-term" id="temp2"></p>
-                <p class="hourly-weather-term" id="feels-like2"></p>
-                <p class="hourly-weather-term" id="wind2"></p>
-                <p class="hourly-weather-term" id="humidity2"></p>
+        <section class="columns">
+          <div class="column">
+            <div class="column card is-half" id="quote-card">
+              <h1 class="card-title">Quote of the Day</h1>
+              <p id="dailyQuote"></p>
+              <p id="quoteAuthor"></p>
             </div>
 
-            <div class="column card">
-                <div id="soundcloud-card">
-                    <h1>Playing...</h1>
-                    <h2>Soundcloud Playlist</h2>
-                </div>
+            <div class="column card is-half" id="weather-card">
+              <h2 class="card-title" id="today-weather-city">
+                Today's Weather
+              </h2>
+              <h3 id="todays-weather"></h3>
+              <p class="weather-term" id="description"></p>
+              <p class="weather-term" id="temp"></p>
+              <p class="weather-term" id="feels-like"></p>
+              <p class="weather-term" id="wind"></p>
+              <p class="weather-term" id="humidity"></p>
             </div>
-            </section>
-        </div>
-    </section>
+          </div>
+        </section>
 
+        <section class="column card is-half" id="hourlyCast">
+          <div class="hour-card column is-one-third">
+            <h2 class="card-title">Hourly Forecast</h2>
+            <h5 class="hour" id="hour0"></h5>
+            <p class="hourly-weather-term" id="description0"></p>
+            <p class="hourly-weather-term" id="temp0"></p>
+            <p class="hourly-weather-term" id="feels-like0"></p>
+            <p class="hourly-weather-term" id="wind0"></p>
+            <p class="hourly-weather-term" id="humidity0"></p>
+          </div>
+          <div class="hour-card column is-one-third">
+            <h5 class="hour" id="hour1"></h5>
+            <p class="hourly-weather-term" id="description1"></p>
+            <p class="hourly-weather-term" id="temp1"></p>
+            <p class="hourly-weather-term" id="feels-like1"></p>
+            <p class="hourly-weather-term" id="wind1"></p>
+            <p class="hourly-weather-term" id="humidity1"></p>
+          </div>
+          <div class="hour-card column is-one-third">
+            <h5 class="hour" id="hour2"></h5>
+            <p class="hourly-weather-term" id="description2"></p>
+            <p class="hourly-weather-term" id="temp2"></p>
+            <p class="hourly-weather-term" id="feels-like2"></p>
+            <p class="hourly-weather-term" id="wind2"></p>
+            <p class="hourly-weather-term" id="humidity2"></p>
+          </div>
+        </section>
+
+        <section class="column card">
+          <section id="soundcloud-card"></section>
+        </section>
+      </section>
     </main>
 
     <footer>
@@ -146,6 +150,12 @@
       </h2>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

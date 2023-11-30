@@ -4,6 +4,7 @@ let backBtn = document.getElementById('backBtn');
 
 let introSection = document.getElementById('introSection');
 let displaySection = document.getElementById('displaySection')
+let moodSelection = $('#moodSelect');
 
 searchBtn.addEventListener('click', userSearch);
 submitBtn.addEventListener('click', changeDisplay);
@@ -11,24 +12,8 @@ backBtn.addEventListener('click', homeScreen);
 
 
 
-
-
-
-
-// let cityName;
-// let longCoordinate;
-// let latCoordinate;
-
-// var apiKey = 'c8334cad6bb5355d5be9600b1a12f31c';
-
-
-// let cityList = document.querySelector("#cityList");
 let chosenCity = document.getElementById('search-input'); 
-// let submitBtn = document.getElementById('submitBtn'); 
-// let clearBtn = document.getElementById('clearBtn');
-// let cities = document.getElementById('cities');
-// let forecast = document.getElementById('forecast');
-// let today = document.getElementById('today')
+
 
 let limit = 5;
 
@@ -41,17 +26,6 @@ let cityInfo = {
     cityName: ""
 }
 
-// const dayNames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-
-// //have the saved previously searched cities populate upon page load
-// function init () {
-//     getStoredCities();
-//     showCityList();
-// }
-
-// function getStoredCities() {
-//     savedCities = JSON.parse(localStorage.getItem("storageSavedCities")) || [];
-// }
 
 displaySection.setAttribute("style", "display: none;");
 
@@ -73,35 +47,40 @@ function chooseCity() {
     let lat = cityOptionsList[selectedCityIndex].lat;
     let cityName = cityOptionsList[selectedCityIndex].name;
 
-    // getStoredCities();
-
-    //add condition to check if two of the same cities are being saved into local storage
-    // for (let i = 0; i < savedCities.length; i++) {
-    //     let city = savedCities[i];
-    //     if (city.cityName == cityName) {
-    //         isDoubled = true;
-    //         break;
-    //     }
-    // }
-
-    // if (!isDoubled) {
-    //     cityInfo.lon = lon;
-    //     cityInfo.lat = lat;
-    //     cityInfo.cityName = cityName;
-        
-        // savedCities.push(cityInfo);
-        // localStorage.setItem("storageSavedCities", JSON.stringify(savedCities));
-    // }
-
     // showCityList();
     getTodaysWeather(lon, lat, cityName);
     getThreeHourCast(lon, lat);
 }
 
-function changeDisplay() {
+function changeDisplay(event) {
+  event.preventDefault();
   introSection.setAttribute("style", "display: none;");
   displaySection.setAttribute("style", "display: block;");
-  getDailyQuote();
+  buildPlaylist();
+  getDailyQuote();  
+}
+
+let buildPlaylist = function (event) {    
+    var moodSelectIndex = Number(moodSelection.val());
+    console.log(moodSelectIndex);
+
+    let playlists = ['1700550624','300494469', '748670643', '265438402','1074641335'];
+
+    
+           
+    // Get the container where you want to display the playlists
+    let playlistContainer = document.getElementById('soundcloud-card');
+    playlistContainer.innerHTML = '';   
+    
+    // Create an iframe element for each playlist          
+    let playlistGenre = document.createElement('iframe');
+    playlistGenre.setAttribute('width', '100%');
+    playlistGenre.setAttribute('height', '300');
+    playlistGenre.setAttribute('scrolling', 'no');
+    playlistGenre.setAttribute('frameborder', 'no');
+    playlistGenre.setAttribute('src', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/' + playlists[moodSelectIndex] + '&color=%23ff5500&auto_play=false&hide_related=false&amp;');
+    playlistContainer.appendChild(playlistGenre);
+          
 }
 
 function homeScreen() {
@@ -182,18 +161,12 @@ function getThreeHourCast(lon, lat) {
             let daysList = data.list;
             
             for (let i=0; i < 3; i++) {
-                // let j=i/8; 
-                // let dateOnly = daysList[i].dt_txt;
-                // dateOnly = dateOnly.split(" ");
-                // dateOnly = dateOnly[0];
-                // let getDay = new Date(dateOnly);
-                // let day = getDay.getDay();
+
                 let unixTime = daysList[i].dt;
                 let unixToHour = dayjs.unix(unixTime).format('h a, MMM D'); // the exact hour of the forcast
                 let hour = document.getElementById('hour'+i);
                 hour.textContent = unixToHour;
-                // let dayOfWeek = document.getElementById('day' + j);
-                // dayOfWeek.textContent = dayNames[day];
+
                 let actualTemp = document.getElementById('temp'+i);
                 actualTemp.textContent='Temp: ' + daysList[i].main.temp + ' °C';
                 let windSpeed = document.getElementById('wind'+i);

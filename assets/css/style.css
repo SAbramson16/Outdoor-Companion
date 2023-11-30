@@ -100,18 +100,26 @@ p {
     font-size: 24px;
 }
 
+<<<<<<< HEAD
 #hourlyCast p {
     font-size: 80%;
+=======
+.hour-card {
+    display: inline-block;
+>>>>>>> 77c71129621b7e20f5fe187c050bd22a47ae9150
 }
 
 .card {
     margin: 20px;
 }
 
+<<<<<<< HEAD
 #quote-card {
     margin-right: 20%;
 }
 
+=======
+>>>>>>> 77c71129621b7e20f5fe187c050bd22a47ae9150
 footer {
     background-color: var(--dark-blue);
     color: var(--light-blue);
