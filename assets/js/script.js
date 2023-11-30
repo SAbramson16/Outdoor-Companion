@@ -56,11 +56,32 @@ function changeDisplay(event) {
   event.preventDefault();
   introSection.setAttribute("style", "display: none;");
   displaySection.setAttribute("style", "display: block;");
-//   buildPlaylist();
+  buildPlaylist();
   getDailyQuote();  
 }
 
+let buildPlaylist = function (event) {    
+    var moodSelectIndex = Number(moodSelection.val());
+    console.log(moodSelectIndex);
 
+    let playlists = ['1700550624','300494469', '748670643', '265438402','1074641335'];
+
+    
+           
+    // Get the container where you want to display the playlists
+    let playlistContainer = document.getElementById('soundcloud-card');
+    playlistContainer.innerHTML = '';   
+    
+    // Create an iframe element for each playlist          
+    let playlistGenre = document.createElement('iframe');
+    playlistGenre.setAttribute('width', '100%');
+    playlistGenre.setAttribute('height', '300');
+    playlistGenre.setAttribute('scrolling', 'no');
+    playlistGenre.setAttribute('frameborder', 'no');
+    playlistGenre.setAttribute('src', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/' + playlists[moodSelectIndex] + '&color=%23ff5500&auto_play=false&hide_related=false&amp;');
+    playlistContainer.appendChild(playlistGenre);
+          
+}
 
 function homeScreen() {
   displaySection.setAttribute("style", "display: none;");
