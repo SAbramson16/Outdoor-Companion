@@ -5,6 +5,7 @@ let backBtn = document.getElementById('backBtn');
 let introSection = document.getElementById('introSection');
 let displaySection = document.getElementById('displaySection')
 let moodSelection = $('#moodSelect');
+let hourlyCast = document.getElementById('hourlyCast');
 
 searchBtn.addEventListener('click', userSearch);
 submitBtn.addEventListener('click', changeDisplay);
