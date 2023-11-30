@@ -101,6 +101,7 @@ function chooseCity() {
 function changeDisplay() {
   introSection.setAttribute("style", "display: none;");
   displaySection.setAttribute("style", "display: block;");
+  getDailyQuote();
 }
 
 function homeScreen() {
@@ -153,19 +154,18 @@ function getTodaysWeather(lon, lat, cityName) {
         todayWeatherCity.textContent = cityName + ": " + unixToHour
 
         let actualTemp = document.getElementById('temp');
-        actualTemp.textContent='Temp: ' + data.main.temp;
+        actualTemp.textContent='Temp: ' + data.main.temp + ' °C';
         let feelsLikeTemp = document.getElementById('feels-like');
-        feelsLikeTemp.textContent='Feels like: ' + data.main.feels_like;
+        feelsLikeTemp.textContent='Feels like: ' + data.main.feels_like + ' °C';
         let weatherDescription = document.getElementById('description');
-        weatherDescription.textContent='Conditions: ' + data.weather.description;
+        weatherDescription.textContent = data.weather[0].description;
         let windSpeed = document.getElementById('wind');
-        windSpeed.textContent='Wind Speed: ' + data.wind.speed;
+        windSpeed.textContent='Wind Speed: ' + data.wind.speed + ' km/h';
         let humidity = document.getElementById('humidity');
-        humidity.textContent='Humidity: ' + data.main.humidity + "%";
-        
-        console.log(data);
+        humidity.textContent='Humidity: ' + data.main.humidity + "%";       
     } );
-}; console.log(getTodaysWeather);
+
+}; 
 
 //API call to get forecast for a selected city based on its latitude and longitude
 function getThreeHourCast(lon, lat) {
@@ -190,24 +190,24 @@ function getThreeHourCast(lon, lat) {
                 // let day = getDay.getDay();
                 let unixTime = daysList[i].dt;
                 let unixToHour = dayjs.unix(unixTime).format('h a, MMM D'); // the exact hour of the forcast
-                let hour = document.getElementById('hour0');
+                let hour = document.getElementById('hour'+i);
                 hour.textContent = unixToHour;
                 // let dayOfWeek = document.getElementById('day' + j);
                 // dayOfWeek.textContent = dayNames[day];
-                let actualTemp = document.getElementById('temp0');
-                actualTemp.textContent='Temp: ' + daysList[i].main.temp;
-                let windSpeed = document.getElementById('wind0');
-                windSpeed.textContent='Wind Speed: ' + daysList[i].wind.speed;
-                let humidity = document.getElementById('humidity0');
-                humidity.textContent='Humidity: ' + daysList[i].main.humidity;
-                let weatherDescription = document.getElementById('description0');
-                weatherDescription.textContent='Conditions: ' + daysList[i].weather.description;
-                let feelsLikeTemp = document.getElementById('feels-like0');
-                feelsLikeTemp.textContent='Feels like: ' + daysList[i].main.feels_like;
-                
+                let actualTemp = document.getElementById('temp'+i);
+                actualTemp.textContent='Temp: ' + daysList[i].main.temp + ' °C';
+                let windSpeed = document.getElementById('wind'+i);
+                windSpeed.textContent='Wind Speed: ' + daysList[i].wind.speed + ' km/h';
+                let humidity = document.getElementById('humidity'+i);
+                humidity.textContent='Humidity: ' + daysList[i].main.humidity + '%';
+                let weatherDescription = document.getElementById('description'+i);
+                weatherDescription.textContent= daysList[i].weather[0].description;
+                let feelsLikeTemp = document.getElementById('feels-like'+i);
+                feelsLikeTemp.textContent='Feels like: ' + daysList[i].main.feels_like + ' °C';                
             }; 
+            
         });
-};   console.log(getThreeHourCast);
+};   
 
 // Quotable API - quote of the day to be added to the display page, along with temperature forcast and spotify content
 
@@ -221,10 +221,10 @@ function getDailyQuote() {
             return response.json();
         }).then( function(data) {
                 let dailyQuote = document.getElementById('dailyQuote');
-                dailyQuote.textContent = data.content;
+                dailyQuote.textContent = data[0].content;
 
                 let quoteAuthor = document.getElementById('quoteAuthor');
-                quoteAuthor.textContent = author;    
+                quoteAuthor.textContent = data[0].author;    
                 
         });
 };  
