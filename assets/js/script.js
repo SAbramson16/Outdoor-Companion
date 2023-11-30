@@ -2,6 +2,9 @@ let submitBtn = document.getElementById('submitBtn');
 let searchBtn = document.getElementById('searchBtn');
 let backBtn = document.getElementById('backBtn');
 
+let introSection = document.getElementById('introSection');
+let displaySection = document.getElementById('displaySection')
+
 searchBtn.addEventListener('click', userSearch);
 submitBtn.addEventListener('click', changeDisplay);
 backBtn.addEventListener('click', homeScreen);
@@ -159,10 +162,10 @@ function getTodaysWeather(lon, lat, cityName) {
         windSpeed.textContent='Wind Speed: ' + data.wind.speed;
         let humidity = document.getElementById('humidity');
         humidity.textContent='Humidity: ' + data.main.humidity + "%";
-        console.log(getTodaysWeather);
         
-    } )
-}
+        console.log(data);
+    } );
+}; console.log(getTodaysWeather);
 
 //API call to get forecast for a selected city based on its latitude and longitude
 function getThreeHourCast(lon, lat) {
@@ -202,11 +205,9 @@ function getThreeHourCast(lon, lat) {
                 let feelsLikeTemp = document.getElementById('feels-like0');
                 feelsLikeTemp.textContent='Feels like: ' + daysList[i].main.feels_like;
                 
-            };
+            }; 
         });
 };   console.log(getThreeHourCast);
-
-
 
 // Quotable API - quote of the day to be added to the display page, along with temperature forcast and spotify content
 
@@ -223,6 +224,7 @@ function getDailyQuote() {
                 dailyQuote.textContent = data.content;
 
                 let quoteAuthor = document.getElementById('quoteAuthor');
-                quoteAuthor.textContent = author;           
+                quoteAuthor.textContent = author;    
+                
         });
-}   
+};  

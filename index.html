@@ -12,136 +12,128 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">   
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body class ="body" id="first-body">
+<body>
+    
     <header><h1>My Outdoor Journey Companion</h1></header>
-
     <main>
-        <section id="introSection">
+        <section class="container" id="introSection">
             <p>Let me be your companion on your journey today! Search for your location, select a length of time your journey will take, and what kind of music you would like to listen to. Click submit and you will see the weather forecast and a spotify playlist chosen just for you and your journey. Enjoy!</p>
-            <div class="pure-u-md-1-2">
-                <section class="form">
-                    <form class ='pure-form pure-u-md-1-4' id="search-form"><h3>Enter your city</h3></form>
-                    <fieldset>
-                        <input id="search-input" type="text" class="pure-input-rounded" placeholder="Enter city name">
-                        <button id="searchBtn" class ='btn pure-button'>Search</button>
-                    </fieldset>
-                    <div class="selectCity">
-                        <form action="" method="post">
-                            <select name="id" id="cities" onchange="javacript:chooseCity()"></select>
-                        </form>
+            <div class="field">
+                    <label class="label">Enter your city</label>
+                    <div class="control">
+                    <input id="search-input" class="input is-medium" type="text" placeholder="City name">
                     </div>
-                </section>
-
-                <div class="select-mood pure-menu pure-menu-horizontal">
-                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                    <a href="#" id="menuLink1" class="pure-menu-link">Choose your mood</a>
-                    <ul class="pure-menu-children">
-                        <a href="#" id='Mood0' class="pure-menu-link">Mood1</a></li>
-                    <li class="pure-menu-item">
-                    <a href="#" id='Mood1' class="pure-menu-link">Mood2</a></li>
-                    <li class="pure-menu-item">
-                    <a href="#" id='Mood2' class="pure-menu-link">Mood3</a></li>
-                    <li class="pure-menu-item">
-                        <a href="#" id='Mood3' class="pure-menu-link">Mood4</a></li>
-                    <li class="pure-menu-item">
-                        <a href="#" id='Mood4' class="pure-menu-link">Mood5</a></li>
-                    <li class="pure-menu-item">
-                        <a href="#" id='Mood5' class="pure-menu-link">Mood6</a></li>
-                </div>
-
-                <div class="pure-menu pure-menu-horizontal">
-                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-                    <a href="#" id="menuLink1" class="pure-menu-link">How long is your journey?</a>
-                <ul class="pure-menu-children">
-                    <a href="#" id="time0" class="pure-menu-link">10 minutes</a></li>
-                    <li class="pure-menu-item">
-                    <a href="#" id="time1" class="pure-menu-link">20 minutes</a></li>
-                    <li class="pure-menu-item">
-                    <a href="#" id="time2" class="pure-menu-link">30 minutes</a></li>
-                    <li class="pure-menu-item">
-                    <a href="#" id="time3" class="pure-menu-link">45 minutes</a></li>
-                    <li class="pure-menu-item">
-                    <a href="#" id="time4" class="pure-menu-link">1 hour</a></li>
-                    <li class="pure-menu-item">
-                    <a href="#" id="time5" class="pure-menu-link">2 hours</a></li>
             </div>
 
-            <section class="pure-g submitBtn">
-                <button id="submitBtn" class ='btn pure-button'>Start my Journey!</button>
-            </section>
+            <div class="btn">
+                <button id="searchBtn" class="button is-primary is-large">Search</button>
+            </div>
+
+            <div class="select is-primary selectCity">
+                    <form action="" method="post">
+                        <select name="id" id="cities" onchange="javacript:chooseCity()"></select>
+                    </form>
+            </div>
+
+                    
+            <div class="select is-primary">
+                <select>
+                        <option>Select your mood</option>
+                        <option>Mood1</option>
+                        <option>Mood2</option>
+                        <option>Mood3</option>
+                        <option>Mood4</option>
+                        <option>Mood5</option>
+                        <option>Mood6</option>
+                </select>
+            </div>
+
+            <div class="select is-primary">
+                <select>
+                        <option>How long is your journey?</option>
+                        <option>10 Minutes</option>
+                        <option>20 Minutes</option>
+                        <option>30 minutes</option>
+                        <option>45 minutes</option>
+                        <option>1 hour</option>
+                        <option>2 hours</option>
+                </select>
+            </div>
+
+            <div class="btn">
+                        <button id="submitBtn" class="button is-primary">Start my journey!</button>
+            </div>
         </section>
 
-    <section id="displaySection">
-        <header><button id="backBtn" class ='btn pure-button'>Go back</button></header>
-        <section class="pure-g container">
-            <section class="pure-u-1-4 card"  id="weather-card">
-                <card id="todays-weather"></card>
-                    <h2 class="card-title"  id="today-weather-city">Today's Weather</h2>
-                    <p class="weather-term" id="temp"></p>
-                    <p class="weather-term" id="feels-like"></p>
-                    <p class="weather-term" id="description"></p>
-                    <p class="weather-term" id="wind"></p>
-                    <p class="weather-term" id="humidity"></p>
-            </section>
-        </section>
-
-        <section class="pure-g container" id="hourlyCast">
-            <card class="pure-u-1-4 card" id="three-hour-card">
-                <h2 class="card-title" >Hourly Forecast</h2>
-                <h5 id="hour0"></h5>
-                <p class="hourly-weather-term" id="temp0"></p>
-                <p class="hourly-weather-term" id="feels-like0"></p>
-                <p class="hourly-weather-term" id="description0"></p>
-                <p class="hourly-weather-term" id="wind0"></p>
-                <p class="hourly-weather-term" id="humidity0"></p>
-            </card>
-
-        <!-- <section class="pure-g container"> -->
-            <card class="pure-u-1-4 card">
-                <h5 id="hour1"></h5>
-                <p class="hourly-weather-term" id="temp1"></p>
-                <p class="hourly-weather-term" id="feels-like1"></p>
-                <p class="hourly-weather-term" id="description1"></p>
-                <p class="hourly-weather-term" id="wind1"></p>
-                <p class="hourly-weather-term" id="humidity1"></p>
-             </card>
-        <!-- </section> -->
-
-        <!-- <section class="pure-g container"> -->
-            <card class="pure-u-1-4 card" >
-                <h5 id="hour2"></h5>
-                <p class="hourly-weather-term" id="temp2"></p>
-                <p class="hourly-weather-term" id="feels-like2"></p>
-                <p class="hourly-weather-term" id="description2"></p>
-                <p class="hourly-weather-term" id="wind2"></p>
-                <p class="hourly-weather-term" id="humidity2"></p>
-            </card>
-        <!-- </section> -->
-    </section>
-        <section class="pure-g container">
-            <section class="pure-u-1-4 card"  id="quote-card">
-                <h1>Quote of the Day</h1>
-                <p id="dailyQuote"></p>
-                <p id="quoteAuthor"></p>
-            </section>
-        </section>
-    
-
-        <section class="pure-g container">
-                <section class="pure-u card"  id="spotify-card">
-                    <h1>Playing...</h1>
-                    <h2>Spotify Playlist</h2>
+        <section class="container" id="displaySection">
+            <button id="backBtn" class ='button is-primary'>Go back</button>
+            
+            <section class="column card">
+                <section id="quote-card">
+                    <h1>Quote of the Day</h1>
+                    <p id="dailyQuote"></p>
+                    <p id="quoteAuthor"></p>
                 </section>
+            </section>
+
+            <section class="column card">
+                <section id="weather-card">
+                    <div></div>
+                        <h2 class="card-title"  id="today-weather-city">Today's Weather</h2>
+                        <h3 id="todays-weather"></h3>
+                        <p class="weather-term" id="temp"></p>
+                        <p class="weather-term" id="feels-like"></p>
+                        <p class="weather-term" id="description"></p>
+                        <p class="weather-term" id="wind"></p>
+                        <p class="weather-term" id="humidity"></p>
+                </section>
+            </section>
+
+            <section class="column card" id="hourlyCast">
+                <div class="hour-card column is-one-quarter">
+                    <h2 class="card-title" >Hourly Forecast</h2>
+                    <h5 class="hour" id="hour0"></h5>
+                    <p class="hourly-weather-term" id="temp0"></p>
+                    <p class="hourly-weather-term" id="feels-like0"></p>
+                    <p class="hourly-weather-term" id="description0"></p>
+                    <p class="hourly-weather-term" id="wind0"></p>
+                    <p class="hourly-weather-term" id="humidity0"></p>
+                </div>
+                <div class="hour-card column is-one-quarter">
+                    <h5 class="hour" id="hour1"></h5>
+                    <p class="hourly-weather-term" id="temp1"></p>
+                    <p class="hourly-weather-term" id="feels-like1"></p>
+                    <p class="hourly-weather-term" id="description1"></p>
+                    <p class="hourly-weather-term" id="wind1"></p>
+                    <p class="hourly-weather-term" id="humidity1"></p>
+                </div>
+                <div class="hour-card column is-one-quarter">
+                    <h5 class="hour" id="hour2"></h5>
+                    <p class="hourly-weather-term" id="temp2"></p>
+                    <p class="hourly-weather-term" id="feels-like2"></p>
+                    <p class="hourly-weather-term" id="description2"></p>
+                    <p class="hourly-weather-term" id="wind2"></p>
+                    <p class="hourly-weather-term" id="humidity2"></p>
+                </div>
+            </section>
+            
+           
+
+            <section class="column card">
+                    <section id="soundcloud-card">
+                        <h1>Playing...</h1>
+                        <h2>Soundcloud Playlist</h2>
+                    </section>
+            </section>
         </section>
-    </section>
     </main>
+   
 
     <footer> <h2><span>&copy</span> Copyright 2023 -- Kunal Shah, Syed Kazmi, Sharon Abramson</h2></footer>
-
+    
 <script src='./assets/js/script.js'></script>
 </body>
 </html>
