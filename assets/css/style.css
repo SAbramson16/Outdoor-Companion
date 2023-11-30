@@ -100,12 +100,16 @@ p {
     font-size: 24px;
 }
 
-.hour-card {
-    display: inline-block;
+#hourlyCast p {
+    font-size: 80%;
 }
 
 .card {
     margin: 20px;
+}
+
+#quote-card {
+    margin-right: 20%;
 }
 
 footer {
