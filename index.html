@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="select is-primary">
+        <select id="moodSelect" onchange="loadPlaylist()">
+          <option value="">Select your mood</option>
+          <option value="Happy">Happy</option>
+          <option value="Sad">Sad</option>
+          <option value="Mood3">Mood3</option>
+          <option value="Mood4">Mood4</option>
+          <option value="Mood5">Mood5</option>
+          <option value="Mood6">Mood6</option>
+        </select>
+      </div>
+
+      <div id="playlistContainer">
+        <!-- Playlists will be loaded here dynamically -->
+      </div>
+
+    <script src="./assets/js/soundcloud.js"></script>
+</body>
+</html>
