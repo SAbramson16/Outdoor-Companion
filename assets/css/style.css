@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
 :root {
     --dark-blue: #2E5266;
     --med-blue: #6E8898;
@@ -17,11 +19,13 @@ body {
     background-color: var(--grey);
 }
 
+
 header {
     background-color: var(--dark-blue);
     color: var(--light-blue);
     height: 100px;
     top: 0;
+    position: static;
 }
 
 header h1 {
@@ -36,57 +40,39 @@ p {
     padding: 10px; 
 }
 
-.card-title {
-    text-align: center;
+.is-medium {
+    width: 50%;
 }
+
+.introSection{
+    margin: 15px;
+}
+
+
 .weather-term {
     text-align: center;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 16px;
 }
 
 .hourly-weather-term {
     text-align: center;
+    font-size: 16px;
+}
+
+.hour {
+    text-align: center;
     font-size: 20px;
-    padding: 10px;
 }
 
-
-
-.form {
-    border-style: solid;
-    background-color: var(--med-blue);
-    margin: 20px;
-}
-
-.pure-form {
-    width: 80%;
-}
-
-.pure-g {
-    letter-spacing: 0em;
-}
-
-.pure-menu {
-    display: inline;
-    margin: 20px;
-}
-
-.pure-menu-item {
-    background: var(--yellow);
-}
-
-.pure-menu-children {
-    background: var(--yellow);
-}
-
-.pure-menu-horizontal {
-    align-items: center;
+#todays-weather {
+    font-size: 20px;
+    text-align: center;
 }
 
 #searchBtn {
     background-color: var(--yellow);
     margin-left: 10px;
+    right: -35%
 }
 
 #submitBtn {
@@ -104,54 +90,25 @@ p {
 
 #backBtn {
     background-color: var(--yellow);
-    margin-left: 10px;
-}
-   
-
-.container {
-    display: inline-block;
-    padding: 0;
-    margin: 50px;
-    height: 30%;
-    width: 50%;
-    border-style: solid;
-    border-width: 10px;
-    text-align: center;
-}
-  
-  .card {
-    width: 100px;
-    height: 200px;
     margin: 10px;
-    display: inline;
-  }
+    top: 10%;
+}
+ 
+.card-title {
+    text-align: center;
+    font-size: 24px;
+}
+
 
 footer {
     background-color: var(--dark-blue);
     color: var(--light-blue);
-    position: fixed;
+    height: 100px;
     bottom: 0;
-    width: 100%;
-    display: block;
+    position: static;
     text-align: center;
-    padding-top: 50px;
+    font-size: 24px;
+    margin-top: 20%;
 }
 
 
-@media only screen and (max-width: 720px) {
-    header h1 {
-      font-size: 30px;
-    }
-  }
-
-  
-@media only screen and (max-width: 720px) {
-    #submitBtn {
-      font-size: 30px;
-      width: 200px;
-      height: 50px;
-      font-size: 18px;
-    }
-  }
-
- 
