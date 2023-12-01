@@ -57,23 +57,11 @@
 
         <div class="select is-primary">
           <select id="moodSelect">
-            <option value="1">Mood1</option>
-            <option value="2">Mood2</option>
-            <option value="3">Mood3</option>
-            <option value="4">Mood4</option>
-            <option value="5">Mood5</option>
-          </select>
-        </div>
-
-        <div class="select is-primary">
-          <select>
-            <option>How long is your journey?</option>
-            <option>10 Minutes</option>
-            <option>20 Minutes</option>
-            <option>30 minutes</option>
-            <option>45 minutes</option>
-            <option>1 hour</option>
-            <option>2 hours</option>
+            <option value="0">Happy</option>
+            <option value="1">Sad</option>
+            <option value="2">Intense</option>
+            <option value="3">Light</option>
+            <option value="4">Acoustic</option>
           </select>
         </div>
 
@@ -87,63 +75,80 @@
       <section id="displaySection">
         <button id="backBtn" class="button is-primary">Go back</button>
 
-        <section class="columns">
-          <div class="column">
-            <div class="column card is-half" id="quote-card">
-              <h1 class="card-title">Quote of the Day</h1>
-              <p id="dailyQuote"></p>
-              <p id="quoteAuthor"></p>
+        <!-- daily weather -->
+        <div class="tile is-ancestor">
+          <div class="tile is-parent weather-box is-3">
+            <article class="tile is-child notification weather-box">
+              <div class="content">
+                <p class="weather-title">
+                  Today's Weather in <span id="today-weather-city"></span>
+                </p>
+                <div class="tile is-parent is-vertical">
+                  <article class="tile is-child notification hour-card">
+                    <p class="hour-current" id="current-hour"></p>
+                    <p class="weather-term" id="temp"></p>
+                    <p class="weather-term" id="feels-like"></p>
+                    <p class="weather-term" id="description"></p>
+                    <p class="weather-term" id="wind"></p>
+                    <p class="weather-term" id="humidity"></p>
+                  </article>
+                  <!-- Content -->
+
+                  <article
+                    id="hourlyCast"
+                    class="tile is-child notification hour-card"
+                  >
+                    <p class="hour" id="hour0"></p>
+                    <p class="hourly-weather-term" id="temp0"></p>
+                    <p class="hourly-weather-term" id="feels-like0"></p>
+                    <p class="hourly-weather-term" id="description0"></p>
+                    <p class="hourly-weather-term" id="wind0"></p>
+                    <p class="hourly-weather-term" id="humidity0"></p>
+                  </article>
+                  <article class="tile is-child notification hour-card">
+                    <p class="hour" id="hour1"></p>
+                    <p class="hourly-weather-term" id="temp1"></p>
+                    <p class="hourly-weather-term" id="feels-like1"></p>
+                    <p class="hourly-weather-term" id="description1"></p>
+                    <p class="hourly-weather-term" id="wind1"></p>
+                    <p class="hourly-weather-term" id="humidity1"></p>
+                  </article>
+                  <article class="tile is-child notification hour-card">
+                    <p class="hour" id="hour2"></p>
+                    <p class="hourly-weather-term" id="temp2"></p>
+                    <p class="hourly-weather-term" id="feels-like2"></p>
+                    <p class="hourly-weather-term" id="description2"></p>
+                    <p class="hourly-weather-term" id="wind2"></p>
+                    <p class="hourly-weather-term" id="humidity2"></p>
+                  </article>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="tile is-vertical is-8">
+            <div class="tile is-parent quote-box">
+              <article id="quote-card" class="tile is-child notification">
+                <p class="title">Quote of the Day</p>
+                <p id="dailyQuote"></p>
+                <p id="quoteAuthor"></p>
+              </article>
             </div>
-
-            <div class="column card is-half" id="weather-card">
-              <h2 class="card-title" id="today-weather-city">
-                Today's Weather
-              </h2>
-              <h3 id="todays-weather"></h3>
-              <p class="weather-term" id="description"></p>
-              <p class="weather-term" id="temp"></p>
-              <p class="weather-term" id="feels-like"></p>
-              <p class="weather-term" id="wind"></p>
-              <p class="weather-term" id="humidity"></p>
+            <div class="tile is-parent music-box">
+              <article
+                id="soundcloud-card"
+                class="tile is-child notification is-danger"
+              >
+                <div class="content">
+                  <!-- Content -->
+                </div>
+              </article>
             </div>
           </div>
-        </section>
-
-        <section class="column card is-half" id="hourlyCast">
-          <div class="hour-card column is-one-third">
-            <h2 class="card-title">Hourly Forecast</h2>
-            <h5 class="hour" id="hour0"></h5>
-            <p class="hourly-weather-term" id="description0"></p>
-            <p class="hourly-weather-term" id="temp0"></p>
-            <p class="hourly-weather-term" id="feels-like0"></p>
-            <p class="hourly-weather-term" id="wind0"></p>
-            <p class="hourly-weather-term" id="humidity0"></p>
-          </div>
-          <div class="hour-card column is-one-third">
-            <h5 class="hour" id="hour1"></h5>
-            <p class="hourly-weather-term" id="description1"></p>
-            <p class="hourly-weather-term" id="temp1"></p>
-            <p class="hourly-weather-term" id="feels-like1"></p>
-            <p class="hourly-weather-term" id="wind1"></p>
-            <p class="hourly-weather-term" id="humidity1"></p>
-          </div>
-          <div class="hour-card column is-one-third">
-            <h5 class="hour" id="hour2"></h5>
-            <p class="hourly-weather-term" id="description2"></p>
-            <p class="hourly-weather-term" id="temp2"></p>
-            <p class="hourly-weather-term" id="feels-like2"></p>
-            <p class="hourly-weather-term" id="wind2"></p>
-            <p class="hourly-weather-term" id="humidity2"></p>
-          </div>
-        </section>
-
-        <section class="column card">
-          <section id="soundcloud-card"></section>
-        </section>
+        </div>
       </section>
     </main>
 
-    <footer>
+    <footer class="footer">
       <h2>
         <span>&copy</span> Copyright 2023 -- Kunal Shah, Syed Kazmi, Sharon
         Abramson
