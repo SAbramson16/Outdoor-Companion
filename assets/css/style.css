@@ -38,42 +38,16 @@ p {
     text-align: center;
     font-size: 20px;
     padding: 10px; 
+    line-height: normal;
 }
 
 .is-medium {
     width: 50%;
 }
 
-.introSection {
-    margin: 15px;
-}
-
-.weather-term {
-    text-align: center;
-    font-size: 16px;
-}
-
-.hourly-weather-term {
-    text-align: center;
-    font-size: 16px;
-}
-
-.hour {
-    text-align: center;
-    font-size: 20px;
-}
-
-#todays-weather {
-    font-size: 20px;
-    text-align: center;
-}
-
-
-
 #searchBtn {
     background-color: var(--yellow);
     right: -35%
-
 }
 
 #submitBtn {
@@ -89,32 +63,124 @@ p {
     font-size: 28px
 }
 
+.introSection {
+    margin: 15px;
+}
+
 #backBtn {
     background-color: var(--yellow);
-    margin: 10px;
+    font-size: 28px;
+    margin: 25px;
     top: 10%;
+    margin-left: 40px;
+    height: 70px;
+    width: 150px;
 }
- 
-.card-title {
+title.is-ancestor {
+    margin: 50px;
+}
+
+.content.is-12{
+    color: white;
+    height: fit-content;
+    margin: auto;
+}
+
+.weather-box {
+    width: 30%;
+    background-color: var(--med-blue);
+    margin-left: 50px;
+}
+
+#today-weather-city p{
+    font-size: 20px;
+}
+
+#todays-weather {
+    font-size: 20px;
     text-align: center;
-    font-size: 24px;
+}
+
+.weather-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.weather-term {
+    text-align: center;
+    font-size: 16px;
+    line-height: .25em;
+    margin: 0;
+    padding: 0;
+}
+
+.hourly-weather-term {
+    text-align: center;
+    font-size: 16px;
+    line-height: .25em;
+    margin: 10px;
+    padding: 0;
 }
 
 .hour-card {
-    display: inline-block;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    background-color: var(--yellow);
 }
 
-.card {
-    margin: 20px;
+.three-hour-title {
+    background-color: var(--dark-blue);
+}
+
+#three-hour {
+    width: 80%;
+    text-align: center;
+    line-height: .20em;
+    position: relative;
+    left: 7%;
+    height: 80%;
+
+}
+
+.hour {
+    text-align: center;
+    font-size: 20px;
+}
+
+#quote-card {
+    height: 75%;
+    margin: 30px;
+    background-color: var(--light-blue);
+}
+
+#quote-card p {
+    font-size: 33px;
+}
+
+#soundcloud-card {
+    margin: auto;
+    height: fit-content;
+}
+
+.is-child {
+    margin: 0;
+    padding: 0;
+    line-height: .25em;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 24px;
 }
 
 footer {
     background-color: var(--dark-blue);
     color: var(--light-blue);
     height: 100px;
-    bottom: 0;
-    position: static;
+    bottom: 10%;
+    position: relative;
     text-align: center;
     font-size: 24px;
-    margin-top: 20%;
+    margin-top: 30px;
 }

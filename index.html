@@ -78,22 +78,22 @@
 
        <!-- daily weather -->
        <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-success">
-            <div class="content">
-              <p class="title">Today's Weather</p>
+        <div class="tile is-parent weather-box is-3">
+          <article class="tile is-child notification weather-box ">
+            <div class="content is-12">
+              <p class="weather-title">Today's Weather</p>
               <p id="today-weather-city"></p>
               <p class="weather-term" id="temp"></p>
               <p class="weather-term" id="feels-like"></p>
               <p class="weather-term" id="description"></p>
               <p class="weather-term" id="wind"></p>
               <p class="weather-term" id="humidity"></p>
-              <div class="tile is-parent is-vertical">
+              <div id="three-hour" class="tile is-parent is-vertical">
                 <!-- Content -->
-                <article class="tile is-child notification is-primary">
-                  <p class="title">Three Hour Forecast</p>
+                <article class="tile three-hour-title is-child notification">
+                  <p class="title ">Three Hour Forecast</p>
                 </article>
-                <article id="hourlyCast" class="tile is-child notification is-warning">
+                <article id="hourlyCast" class="tile is-child notification hour-card">
                   <p class="hour" id="hour0"></p>
                   <p class="hourly-weather-term" id="temp0"></p>
                   <p class="hourly-weather-term" id="feels-like0"></p>
@@ -101,7 +101,7 @@
                   <p class="hourly-weather-term" id="wind0"></p>
                   <p class="hourly-weather-term" id="humidity0"></p>
                 </article>
-                <article class="tile is-child notification is-warning">
+                <article class="tile is-child notification hour-card">
                   <p class="hour" id="hour1"></p>
                   <p class="hourly-weather-term" id="temp1"></p>
                   <p class="hourly-weather-term" id="feels-like1"></p>
@@ -109,7 +109,7 @@
                   <p class="hourly-weather-term" id="wind1"></p>
                   <p class="hourly-weather-term" id="humidity1"></p>
                 </article>
-                <article class="tile is-child notification is-warning">
+                <article class="tile is-child notification hour-card">
                   <p class="hour" id="hour2"></p>
                   <p class="hourly-weather-term" id="temp2"></p>
                   <p class="hourly-weather-term" id="feels-like2"></p>
@@ -122,14 +122,14 @@
           </article>
         </div>
         <div class="tile is-vertical is-8">
-          <div class="tile is-parent">
-            <article id="quote-card" class="tile is-child notification is-danger">
+          <div class="tile is-parent quote-box">
+            <article id="quote-card" class="tile is-child notification">
               <p class="title">Quote of the Day</p>
               <p id="dailyQuote"></p>
               <p id="quoteAuthor"></p>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent music-box">
             <article id="soundcloud-card" class="tile is-child notification is-danger">
               <div class="content">
                 <!-- Content -->
@@ -140,7 +140,7 @@
       </div>
 
     </section>
-    </main>
+</main>
 
     <footer>
       <h2>
