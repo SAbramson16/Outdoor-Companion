@@ -69,7 +69,7 @@ JavaScript Library: Parses, validates, manipulates, and displays dates and times
 
 #### jQuery (https://api.jquery.com/)
 
-JavaScript Library: makes DOM traversal, manipulation, event handling, and animation much simpler, works across multiple browers.
+JavaScript Library: makes DOM traversal, manipulation, event handling, and animation much simpler, works across multiple browsers.
 
 ## Roadmap
 
@@ -81,7 +81,7 @@ JavaScript Library: makes DOM traversal, manipulation, event handling, and anima
 
 - [Sharon Abramson](HTML, CSS)
 
-- [Syed Kazmi](Quotable, OpenWeaterMap)
+- [Syed Kazmi](Quotable, OpenWeatherMap)
 
 - [Kunal Shah](SoundCloud, Spotify)
 

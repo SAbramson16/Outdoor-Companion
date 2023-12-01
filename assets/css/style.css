@@ -230,7 +230,20 @@ p {
     margin-top: 25px;
 } */
 
-.footer {
+.footer-display {
+    background-color: #6B7A8F;
+    color: var(--light-blue);
+    height: 100px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: static;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20%;
+}
+
+.footer-intro {
     background-color: #6B7A8F;
     color: var(--light-blue);
     height: 100px;
@@ -241,4 +254,14 @@ p {
     text-align: center;
     font-size: 24px;
     margin-top: 20%;
+}
+
+.footer-intro h2{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.footer-display h2{
+    text-align: center;
+    padding-top: 25px;
 }
