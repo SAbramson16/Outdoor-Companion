@@ -90,7 +90,7 @@ JavaScript Library: makes DOM traversal, manipulation, event handling, and anima
 Website URL
 
 ```bash
-  npm run deploy
+  [npm run deploy](https://sabramson16.github.io/Proj1.Outdoor-Companion/)
 ```
 
 GitHub Repository
