@@ -5,6 +5,7 @@ let backBtn = document.getElementById('backBtn');
 let introSection = document.getElementById('introSection');
 let displaySection = document.getElementById('displaySection')
 let moodSelection = $('#moodSelect');
+let hourlyCast = document.getElementById('hourlyCast');
 
 searchBtn.addEventListener('click', userSearch);
 submitBtn.addEventListener('click', changeDisplay);
@@ -75,7 +76,7 @@ let buildPlaylist = function (event) {
     // Create an iframe element for each playlist          
     let playlistGenre = document.createElement('iframe');
     playlistGenre.setAttribute('width', '100%');
-    playlistGenre.setAttribute('height', '300');
+    playlistGenre.setAttribute('height', '450');
     playlistGenre.setAttribute('scrolling', 'no');
     playlistGenre.setAttribute('frameborder', 'no');
     playlistGenre.setAttribute('src', 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/' + playlists[moodSelectIndex] + '&color=%23ff5500&auto_play=false&hide_related=false&amp;');
@@ -130,7 +131,9 @@ function getTodaysWeather(lon, lat, cityName) {
         let unixTime = data.dt;
         let unixToHour = dayjs.unix(unixTime).format('h:mm a, MMM D'); // the current weather
        
-        todayWeatherCity.textContent = cityName + ": " + unixToHour
+        todayWeatherCity.textContent = cityName;
+        let currentHour = document.getElementById('current-hour');
+        currentHour.textContent = unixToHour;
 
         let actualTemp = document.getElementById('temp');
         actualTemp.textContent='Temp: ' + data.main.temp + ' °C';

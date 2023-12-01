@@ -8,6 +8,10 @@
     --yellow: #E2C044;
 }
 
+html {
+    background-color: #e5eaf5;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,12 +20,12 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--grey);
+    background-color: #e5eaf5;
+   
 }
 
-
 header {
-    background-color: var(--dark-blue);
+    background-color: #494d5f;
     color: var(--light-blue);
     height: 100px;
     top: 0;
@@ -32,48 +36,35 @@ header h1 {
     font-size: 36px;
     text-align: center;
     padding-top: 10px;
+    text-shadow: 5px 5px 10px black;
+}
+
+.intro-body {
+    margin: 25px;
+}
+
+#introSection {
+    background-color: #e5eaf5;
+}
+
+.container {
+    height: 100%;
 }
 
 p {
     text-align: center;
     font-size: 20px;
     padding: 10px; 
+    line-height: normal;
 }
 
 .is-medium {
     width: 50%;
 }
 
-.introSection {
-    margin: 15px;
-}
-
-.weather-term {
-    text-align: center;
-    font-size: 16px;
-}
-
-.hourly-weather-term {
-    text-align: center;
-    font-size: 16px;
-}
-
-.hour {
-    text-align: center;
-    font-size: 20px;
-}
-
-#todays-weather {
-    font-size: 20px;
-    text-align: center;
-}
-
-
-
 #searchBtn {
     background-color: var(--yellow);
     right: -35%
-
 }
 
 #submitBtn {
@@ -89,31 +80,164 @@ p {
     font-size: 28px
 }
 
+/* .introSection {
+    margin: 15px;
+} */
+
 #backBtn {
-    background-color: var(--yellow);
-    margin: 10px;
+    box-shadow: rgb(39, 57, 79) 0px 20px 30px -10px;
+    font-size: 28px;
+    margin: 25px;
     top: 10%;
+    margin-left: 40px;
+    height: 70px;
+    width: 150px;
 }
- 
+
+.content.is-12{
+    color: white;
+    height: fit-content;
+    margin: auto;
+}
+
+.weather-box {
+    width: 30%;
+    background-color: #e5eaf5;
+    margin-left: 50px;
+}
+
+#today-weather-city p{
+    font-size: 20px;
+}
+
+#todays-weather {
+    font-size: 20px;
+    text-align: center;
+}
+
+.weather-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.weather-term {
+    text-align: center;
+    font-size: 16px;
+    line-height: .25em;
+    margin: 0;
+    padding: 0;
+}
+
+.hourly-weather-term {
+    text-align: center;
+    font-size: 16px;
+    line-height: .25em;
+    margin: 10px;
+    padding: 0;
+}
+
+.hour-card {
+    height: fit-content;
+    margin: 0;
+    padding-bottom: 5px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color:#fff;
+    border-radius: 10px;
+    box-shadow: rgba(44, 105, 175, 0.3) 0px 0px 0px 3px;
+}
+
+.three-hour-title {
+    background-color: var(--dark-blue);
+}
+
+
+#three-hour {
+    width: 80%;
+    text-align: center;
+    line-height: .20em;
+    position: relative;
+    left: 7%;
+    height: 100%;
+
+}
+
+.hour {
+    text-align: center;
+    font-size: 20px;
+}
+
+.tile.is-vertical.is-8 {
+    margin-left: 100px;
+}
+
+#quote-card {
+    height: 75%;
+    margin: 30px;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    box-shadow: rgb(40, 65, 88) 3px 3px 6px 0px inset, rgba(31, 31, 31, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 10px;
+}
+
+#quote-card p {
+    font-size: 33px;
+}
+
+#soundcloud-card {
+    margin: auto;
+    height: fit-content;
+    box-shadow: rgba(210, 75, 161, 0.4) 5px 5px, rgba(210, 75, 161, 0.3) 10px 10px, rgba(210, 75, 161, 0.2) 15px 15px, rgba(210, 75, 161, 0.1) 20px 20px, rgba(210, 75, 161, 0.05) 25px 25px;
+}
+
+.is-child {
+    margin: 0;
+    padding: 0;
+    line-height: .25em;
+}
+
 .card-title {
     text-align: center;
     font-size: 24px;
 }
 
-.hour-card {
-    display: inline-block;
-}
-
-.card {
-    margin: 20px;
-}
-
-footer {
+/* #footer-one {
     background-color: var(--dark-blue);
     color: var(--light-blue);
-    height: 100px;
+    height: 80px;
+    position: fixed;
     bottom: 0;
+    margin:0;
+    font-size: 24px;
+    width: 100%
+}
+
+#footer-one h2 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+#footer-two {
+    background-color: var(--dark-blue);
+    color: var(--light-blue);
+    height: 80px;
     position: static;
+    bottom: 0;
+    font-size: 24px;
+}
+
+#footer-two {
+    text-align: center;
+    margin-top: 25px;
+} */
+
+.footer {
+    background-color: #6B7A8F;
+    color: var(--light-blue);
+    height: 100px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
     text-align: center;
     font-size: 24px;
     margin-top: 20%;
